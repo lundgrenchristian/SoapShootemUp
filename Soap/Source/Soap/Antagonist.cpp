@@ -18,6 +18,9 @@ AAntagonist::AAntagonist()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	/*Camera->SetWorldLocation(FVector(0.0f, 0.0f, 1000.0f));
+	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));*/
+
 
 	
 

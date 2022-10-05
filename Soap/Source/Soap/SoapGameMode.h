@@ -7,6 +7,16 @@
 #include "Enemy0.h"
 #include "SoapGameMode.generated.h"
 
+
+USTRUCT()
+struct FFormation
+{
+	GENERATED_BODY()
+
+		UPROPERTY()
+		TArray<FVector> Locations;
+};
+
 /**
  * 
  */
@@ -30,6 +40,13 @@ public:
 	UFUNCTION()
 	void SpawnGroupOfEnemies() const;
 
+	UPROPERTY()
+	TArray<FFormation> FormationsArray;
+
+	UFUNCTION()
+	void InitializeFormationArray(TArray<FFormation> Formations);
+
+
 
 	virtual void BeginPlay() override;
 
@@ -41,7 +58,9 @@ public:
 
 	virtual void HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer) override;
 
-
+	
 
 	
 };
+
+

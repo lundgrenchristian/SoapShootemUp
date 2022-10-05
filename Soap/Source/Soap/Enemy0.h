@@ -13,5 +13,18 @@ UCLASS()
 class SOAP_API AEnemy0 : public ABaseCharacter
 {
 	GENERATED_BODY()
-	
+
+public:
+		AEnemy0();
+
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION()
+		void Move();
+
+
 };
