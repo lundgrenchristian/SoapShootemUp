@@ -61,7 +61,7 @@ void AAntagonist::MoveForward(float Value)
 	const FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetUnitAxis(EAxis::X);
 	AddMovementInput(Direction, Value);
 
-	UE_LOG(LogSoap, Warning, TEXT("Game is running %s %f"), *Direction.ToString(), Value);
+	//UE_LOG(LogSoap, Warning, TEXT("Game is running %s %f"), *Direction.ToString(), Value);
 }
 
 void AAntagonist::MoveRight(float Value)

@@ -18,8 +18,8 @@ void ASoapGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	InitializeFormationArray(FormationsArray);
-	//GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &ASoapGameMode::SpawnGroupOfEnemies, 1.0f, true, 5.0f);
-	SpawnGroupOfEnemies();
+	GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &ASoapGameMode::SpawnGroupOfEnemies, 1.0f, true, 5.0f);
+	//SpawnGroupOfEnemies();
 }
 
 
@@ -65,12 +65,13 @@ void ASoapGameMode::InitializeFormationArray(TArray<FFormation> Formations)
 
 	FFormation Formation1;
 	const int EnemiesInFormation = 6;
-	const float Distance = 200.0f;
+	const float Distance = 1500.0f;
 
 	for(int i = 0; i < EnemiesInFormation; i++)
 	{
-		FVector Location(SpawnDistanceFromPlayer, ((EnemiesInFormation/2) * -Distance) + (Distance * i) + Distance/2, 0.f);
+		FVector Location(SpawnDistanceFromPlayer, (i /6) * 1000.0f, 0.f);
 		Formation1.Locations.Add(Location);
+		UE_LOG(LogSoap, Log, TEXT("%f %d %d"), Distance, EnemiesInFormation, i);
 	}
 
 
