@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "BaseCharacter.h"
+
 #include "Antagonist.generated.h"
 
 /**
@@ -22,6 +23,10 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		class UCameraComponent* Camera;
+
+	//GUNS
+	UPROPERTY(EditAnywhere)
+	class UGunComponent* BaseGun;
 
 
 protected:

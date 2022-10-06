@@ -3,6 +3,7 @@
 #include "Antagonist.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "GunComponent.h"
 #include "Soap.h"
 
 
@@ -22,7 +23,9 @@ AAntagonist::AAntagonist()
 	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));*/
 
 
-	
+	//Gun
+	BaseGun = CreateDefaultSubobject<UGunComponent>(TEXT("BaseGun"));
+
 
 	
 }
