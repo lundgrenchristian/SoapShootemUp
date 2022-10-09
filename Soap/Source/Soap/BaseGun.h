@@ -10,7 +10,7 @@
 /**
  * 
  */
-UCLASS(Abstract, BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced)
+UCLASS(Abstract, BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced) //DefaultToInstanced
 class SOAP_API UBaseGun : public UObject
 {
 	GENERATED_BODY()
@@ -19,13 +19,15 @@ public:
 
 	UBaseGun();
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Static Mesh")
-		class UStaticMeshComponent* Mesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Static Mesh")
+		class UStaticMesh* Mesh;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Bullet")
 		TSubclassOf<ABaseBullet> Bullet;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Fire Rate")
 		float FireRate;
+
+	virtual void Use();
 	
 };

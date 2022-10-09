@@ -9,3 +9,7 @@ UBaseGun::UBaseGun()
 	
 }
 
+void UBaseGun::Use()
+{
+}
+

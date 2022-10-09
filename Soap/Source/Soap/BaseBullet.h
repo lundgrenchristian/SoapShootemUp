@@ -15,6 +15,12 @@ public:
 	// Sets default values for this actor's properties
 	ABaseBullet();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UProjectileMovementComponent* ProjectileMovement;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UStaticMeshComponent* Mesh;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

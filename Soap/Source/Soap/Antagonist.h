@@ -29,7 +29,7 @@ public:
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class USceneComponent* GunMesh;
+		class UStaticMeshComponent* GunMesh;
 
 
 protected:

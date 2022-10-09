@@ -2,6 +2,7 @@
 
 
 #include "GunComponent.h"
+#include "Antagonist.h"
 
 
 // Sets default values for this component's properties
@@ -11,8 +12,10 @@ UGunComponent::UGunComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+	
+	
+	
 
-	// ...
 }
 
 
@@ -21,7 +24,6 @@ void UGunComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
 	
 }
 
@@ -32,11 +34,14 @@ void UGunComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorCo
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 
-	// ...
+
 }
 
 void UGunComponent::Use()
 {
+	
+	Cast<AAntagonist>(GetOwner())->GunMesh->SetStaticMesh(Cast<UBaseGun>(EquippedGun)->Mesh);
+
 
 }
 

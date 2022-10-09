@@ -21,6 +21,7 @@ public:
 	TSubclassOf<UBaseGun> EquippedGun;
 
 
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -13,5 +13,10 @@ UCLASS()
 class SOAP_API UGun0 : public UBaseGun
 {
 	GENERATED_BODY()
+
+		UGun0();
+
+
+	virtual void Use()override;
 	
 };
