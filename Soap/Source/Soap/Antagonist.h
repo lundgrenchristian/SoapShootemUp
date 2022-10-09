@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "BaseCharacter.h"
-
 #include "Antagonist.generated.h"
 
 /**
@@ -26,7 +25,11 @@ public:
 
 	//GUNS
 	UPROPERTY(EditAnywhere)
-	class UGunComponent* BaseGun;
+	class UGunComponent* GunComponent;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USceneComponent* GunMesh;
 
 
 protected:

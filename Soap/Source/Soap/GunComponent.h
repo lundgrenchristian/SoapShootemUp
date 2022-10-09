@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "BaseGun.h"
 #include "GunComponent.generated.h"
 
 
@@ -16,12 +17,14 @@ public:
 	// Sets default values for this component's properties
 	UGunComponent();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UBaseGun> EquippedGun;
+
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	UPROPERTY(BlueprintReadOnly)
-		UObject* EquippedGun;
 
 public:	
 	// Called every frame

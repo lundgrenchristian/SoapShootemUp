@@ -24,9 +24,10 @@ AAntagonist::AAntagonist()
 
 
 	//Gun
-	BaseGun = CreateDefaultSubobject<UGunComponent>(TEXT("BaseGun"));
+	GunComponent = CreateDefaultSubobject<UGunComponent>(TEXT("Gun Component"));	
 
-
+	GunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GunMesh"));
+	GunMesh->SetupAttachment(RootComponent);
 	
 }
 

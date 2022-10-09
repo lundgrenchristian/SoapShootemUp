@@ -11,6 +11,7 @@ UGunComponent::UGunComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+
 	// ...
 }
 
@@ -36,5 +37,6 @@ void UGunComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorCo
 
 void UGunComponent::Use()
 {
+
 }
 
