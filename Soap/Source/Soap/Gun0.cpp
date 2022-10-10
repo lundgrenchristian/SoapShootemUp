@@ -2,6 +2,9 @@
 
 
 #include "Gun0.h"
+
+#include "Antagonist.h"
+#include "Soap.h"
 #include "Bullet0.h"
 
 UGun0::UGun0()
@@ -25,9 +28,11 @@ void UGun0::Tick(float DeltaTime)
 
 void UGun0::Shoot()
 {
-
+	
 	
 	Super::Shoot();
-	World->SpawnActor<ABullet0>(Bullet, FVector(0.0f, 0.0f, 100.0f), FRotator(0.0f, 0.0f, 0.0f));
+	World->SpawnActor<ABullet0>(Bullet, Antagonist->GetActorLocation() , Antagonist->GetActorRotation());
+
+	UE_LOG(LogSoap, Warning, TEXT("%s"), *Antagonist->GetActorLocation().ToString());
 
 }

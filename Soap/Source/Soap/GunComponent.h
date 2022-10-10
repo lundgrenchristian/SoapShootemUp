@@ -21,12 +21,16 @@ public:
 	TSubclassOf<UBaseGun> EquippedGunTemplate;
 
 	UPROPERTY()
+		class AAntagonist* Antagonist;
+
+	UPROPERTY()
 	class UBaseGun* EquippedGun;
 
 	UPROPERTY()
 	class UWorld* World;
 
-
+	UPROPERTY()
+	float FireCounter;
 
 protected:
 	// Called when the game starts

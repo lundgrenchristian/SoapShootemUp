@@ -12,6 +12,7 @@ ABaseBullet::ABaseBullet()
 
 
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	SetRootComponent(Root);
 
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 	//ProjectileMovement->SetupAttachment(RootComponent);

@@ -28,16 +28,22 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Fire Rate")
 		float FireRate;
 
+	
+
 	UPROPERTY()
 		class UWorld* World;
+
+	UPROPERTY()
+		class AAntagonist* Antagonist;
+
+
 
 	//virtual class UWorld* GetWorld() const override
 	//{
 	//	return World;
 	//}
 
-	UPROPERTY()
-		float FireCounter;
+
 
 	UFUNCTION()
 	virtual void Use();
