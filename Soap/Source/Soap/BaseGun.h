@@ -28,6 +28,24 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Fire Rate")
 		float FireRate;
 
+	UPROPERTY()
+		class UWorld* World;
+
+	//virtual class UWorld* GetWorld() const override
+	//{
+	//	return World;
+	//}
+
+	UPROPERTY()
+		float FireCounter;
+
+	UFUNCTION()
 	virtual void Use();
+
+	UFUNCTION()
+	virtual void Tick(float DeltaTime);
+
+	UFUNCTION()
+	virtual void Shoot();
 	
 };

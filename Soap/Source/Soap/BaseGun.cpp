@@ -3,13 +3,29 @@
 
 #include "BaseGun.h"
 
-UBaseGun::UBaseGun()
+UBaseGun::UBaseGun(): FireCounter(0.0f)
 {
-
 	
 }
 
 void UBaseGun::Use()
+{
+}
+
+void UBaseGun::Tick(float DeltaTime)
+{
+	FireCounter += DeltaTime;
+
+	if(FireRate <= FireCounter)
+	{
+		Shoot();
+		FireCounter = 0.0f;
+	}
+
+
+}
+
+void UBaseGun::Shoot()
 {
 }
 

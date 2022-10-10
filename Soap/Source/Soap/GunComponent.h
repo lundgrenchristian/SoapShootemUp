@@ -18,7 +18,13 @@ public:
 	UGunComponent();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<UBaseGun> EquippedGun;
+	TSubclassOf<UBaseGun> EquippedGunTemplate;
+
+	UPROPERTY()
+	class UBaseGun* EquippedGun;
+
+	UPROPERTY()
+	class UWorld* World;
 
 
 
@@ -31,6 +37,8 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+
+	UFUNCTION()
 	void Use();
 		
 };

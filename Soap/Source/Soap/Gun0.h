@@ -18,5 +18,12 @@ class SOAP_API UGun0 : public UBaseGun
 
 
 	virtual void Use()override;
+
+
+	virtual void Tick(float DeltaTime) override;
+
+	
+	
+	virtual void Shoot() override;
 	
 };

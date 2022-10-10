@@ -15,6 +15,9 @@ public:
 	// Sets default values for this actor's properties
 	ABaseBullet();
 
+	UPROPERTY()
+		class USceneComponent* Root;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UProjectileMovementComponent* ProjectileMovement;
 
