@@ -18,8 +18,8 @@ void ASoapGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	InitializeFormationArray(FormationsArray);
-	//GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &ASoapGameMode::SpawnGroupOfEnemies, 1.0f, true, 5.0f);
-	SpawnGroupOfEnemies();
+	GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &ASoapGameMode::SpawnGroupOfEnemies, 4.0f, true, 1.0f);
+	
 }
 
 

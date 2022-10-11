@@ -31,6 +31,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* GunMesh;
 
+	
 
 protected:
 	virtual void BeginPlay() override;

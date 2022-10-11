@@ -23,9 +23,16 @@ ABaseBullet::ABaseBullet()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(Root);
+	Mesh->SetGenerateOverlapEvents(true);
+	Mesh->OnComponentBeginOverlap.AddDynamic(this, &ABaseBullet::OnComponentBeginOverlap);
 
+	/*Mesh->OnComponentBeginOverlap.AddDynamic(this, &ABaseBullet)*/
 
 	
+}
+
+void ABaseBullet::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
 }
 
 // Called when the game starts or when spawned

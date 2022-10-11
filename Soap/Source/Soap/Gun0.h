@@ -25,5 +25,7 @@ class SOAP_API UGun0 : public UBaseGun
 	
 	
 	virtual void Shoot() override;
+
+	
 	
 };

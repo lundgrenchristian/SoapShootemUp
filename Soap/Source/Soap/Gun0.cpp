@@ -28,10 +28,13 @@ void UGun0::Tick(float DeltaTime)
 
 void UGun0::Shoot()
 {
-	
-	
+	FVector Location = Antagonist->GunMesh->GetComponentLocation();
+	FRotator Rotation = Antagonist->GunMesh->GetComponentRotation();
+	FActorSpawnParameters SpawnParameters;
+	SpawnParameters.Instigator = Antagonist;
+
 	Super::Shoot();
-	World->SpawnActor<ABullet0>(Bullet, Antagonist->GetActorLocation() , Antagonist->GetActorRotation());
+	World->SpawnActor<ABullet0>(Bullet, Location , Rotation, SpawnParameters);
 
 	UE_LOG(LogSoap, Warning, TEXT("%s"), *Antagonist->GetActorLocation().ToString());
 
