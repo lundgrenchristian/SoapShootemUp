@@ -31,6 +31,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* GunMesh;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USceneComponent* Muzzle;
+
 	
 
 protected:

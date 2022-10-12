@@ -28,8 +28,9 @@ void UGun0::Tick(float DeltaTime)
 
 void UGun0::Shoot()
 {
-	FVector Location = Antagonist->GunMesh->GetComponentLocation();
-	FRotator Rotation = Antagonist->GunMesh->GetComponentRotation();
+	FVector Location = Antagonist->Muzzle->GetComponentLocation();
+	FRotator Rotation = Antagonist->Muzzle->GetComponentRotation();
+
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.Instigator = Antagonist;
 

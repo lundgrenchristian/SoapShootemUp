@@ -4,23 +4,24 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GunComponent.h"
+
 #include "Soap.h"
 
 
 AAntagonist::AAntagonist()
-{
+{/*
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(RootComponent);
 
 	SpringArm->SetRelativeRotation(FRotator(-90.0f, 0.0f, 0.0f));
 	SpringArm->TargetArmLength = 1000.0f;
 	SpringArm->bEnableCameraLag = true;
-	SpringArm->CameraLagSpeed = 1.0f;
+	SpringArm->CameraLagSpeed = 1.0f;*/
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
-	/*Camera->SetWorldLocation(FVector(0.0f, 0.0f, 1000.0f));
-	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));*/
+	//Camera->SetupAttachment(RootComponent);
+	Camera->SetWorldLocation(FVector(0.0f, 0.0f, 1000.0f));
+	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));
 
 
 	//Gun
@@ -28,18 +29,43 @@ AAntagonist::AAntagonist()
 
 	GunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GunMesh"));
 	GunMesh->SetupAttachment(RootComponent);
+
+	Muzzle = CreateDefaultSubobject<USceneComponent>(TEXT("Bullet Spawn Location"));
+	Muzzle->SetupAttachment(GunMesh);
+
+	
 	
 }
 
 void AAntagonist::BeginPlay()
 {
 	Super::BeginPlay();
+
+	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+	PlayerController->bShowMouseCursor = true;
 }
 
 
 void AAntagonist::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+
+	//Set rotation to mouse position
+	{
+		const APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+
+		FVector MouseLocation, MouseDirection;
+		PlayerController->DeprojectMousePositionToWorld(MouseLocation, MouseDirection);
+
+
+		FVector LookDirection = MouseLocation + (MouseDirection * 1000.0f);
+		LookDirection = LookDirection - GetActorLocation();
+		FRotator TargetRotation = LookDirection.Rotation();
+		FRotator NewRotation = FRotator(0, TargetRotation.Yaw, 0);
+
+		SetActorRotation(NewRotation);
+	}
+
 }
 
 void AAntagonist::NotifyActorBeginOverlap(AActor* OtherActor)

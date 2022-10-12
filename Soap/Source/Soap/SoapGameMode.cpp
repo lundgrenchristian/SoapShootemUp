@@ -60,11 +60,11 @@ void ASoapGameMode::SpawnGroupOfEnemies() const
 
 void ASoapGameMode::InitializeFormationArray(TArray<FFormation> Formations)
 {
-	const float SpawnDistanceFromPlayer = 2000.0f;
+	const float SpawnDistanceFromPlayer = 600.0f;
 
 
 	FFormation Formation1;
-	const int EnemiesInFormation = 7;
+	const int EnemiesInFormation = 5;
 	const float Distance = 1200.0f;
 
 	for(int i = 0; i < EnemiesInFormation; i++)	

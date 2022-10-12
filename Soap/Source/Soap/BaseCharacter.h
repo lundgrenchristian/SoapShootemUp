@@ -25,8 +25,6 @@ public:
 	UFUNCTION()
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
-	/** Destroy the actor */
-		virtual void K2_DestroyActor() override;
 	
 
 protected:

@@ -5,7 +5,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 
 // Sets default values
-ABaseBullet::ABaseBullet()
+ABaseBullet::ABaseBullet(): BulletSpeed(1000.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -17,8 +17,8 @@ ABaseBullet::ABaseBullet()
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 	//ProjectileMovement->SetupAttachment(RootComponent);
 
-	ProjectileMovement->InitialSpeed = 800.0f;
-	ProjectileMovement->MaxSpeed = 800.0f;
+	ProjectileMovement->InitialSpeed = BulletSpeed;
+	ProjectileMovement->MaxSpeed = BulletSpeed;
 	ProjectileMovement->ProjectileGravityScale = 0.0f;
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));

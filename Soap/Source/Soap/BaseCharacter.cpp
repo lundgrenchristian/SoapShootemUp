@@ -20,9 +20,7 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	return DamageAmount;
 }
 
-void ABaseCharacter::K2_DestroyActor()
-{
-}
+
 
 // Called when the game starts or when spawned
 void ABaseCharacter::BeginPlay()
