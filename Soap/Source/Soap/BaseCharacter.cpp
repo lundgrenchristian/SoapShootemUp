@@ -3,7 +3,8 @@
 
 #include "BaseCharacter.h"
 #include "Soap.h"
-	
+#include "Components/CapsuleComponent.h"
+
 
 // Sets default values
 ABaseCharacter::ABaseCharacter(): Health(100.0f)
@@ -11,6 +12,8 @@ ABaseCharacter::ABaseCharacter(): Health(100.0f)
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Overlap);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic, ECollisionResponse::ECR_Block);
 }
 
 float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)

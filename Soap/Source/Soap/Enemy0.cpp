@@ -2,10 +2,14 @@
 
 
 #include "Enemy0.h"
+#include "ItemComponent.h"
 
 AEnemy0::AEnemy0()
 {
 	AutoPossessAI = EAutoPossessAI::Spawned;
+
+	/*ItemComponent = CreateDefaultSubobject<UItemComponent>(TEXT("Item Component"));*/
+
 }
 
 void AEnemy0::BeginPlay()

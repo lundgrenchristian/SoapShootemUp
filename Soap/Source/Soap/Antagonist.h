@@ -17,22 +17,29 @@ class SOAP_API AAntagonist : public ABaseCharacter
 public:
 	AAntagonist();
 
-	UPROPERTY(EditAnywhere)
-		class USpringArmComponent* SpringArm;
+	//UPROPERTY(EditAnywhere)
+	//	class USpringArmComponent* SpringArm;
 
 	UPROPERTY(EditAnywhere)
 		class UCameraComponent* Camera;
 
-	//GUNS
+
+
 	UPROPERTY(EditAnywhere)
-	class UGunComponent* GunComponent;
+	class UItemComponent* ItemComponent;
 
 
+
+	//GUN
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* GunMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USceneComponent* Muzzle;
+
+
+
+
 
 	
 

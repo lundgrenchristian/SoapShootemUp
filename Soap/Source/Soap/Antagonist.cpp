@@ -3,7 +3,7 @@
 #include "Antagonist.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "GunComponent.h"
+#include "ItemComponent.h"
 
 #include "Soap.h"
 
@@ -24,14 +24,18 @@ AAntagonist::AAntagonist()
 	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));
 
 
-	//Gun
-	GunComponent = CreateDefaultSubobject<UGunComponent>(TEXT("Gun Component"));	
+	
+	ItemComponent = CreateDefaultSubobject<UItemComponent>(TEXT("Gun Component"));
 
-	GunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GunMesh"));
+	
+	GunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Gun Mesh"));
 	GunMesh->SetupAttachment(RootComponent);
+	GunMesh->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Overlap);
 
-	Muzzle = CreateDefaultSubobject<USceneComponent>(TEXT("Bullet Spawn Location"));
+	Muzzle = CreateDefaultSubobject<USceneComponent>(TEXT("Muzzle"));
 	Muzzle->SetupAttachment(GunMesh);
+	
+
 
 	
 	

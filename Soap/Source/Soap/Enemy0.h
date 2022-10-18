@@ -23,6 +23,10 @@ public:
 
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UItemComponent* ItemComponent;*/
+
+
 	UFUNCTION()
 		void Move();
 

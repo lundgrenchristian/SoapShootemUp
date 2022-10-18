@@ -4,33 +4,29 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "BaseGun.h"
-#include "GunComponent.generated.h"
+#include "Item.h"
+#include "ItemComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class SOAP_API UGunComponent : public UActorComponent
+class SOAP_API UItemComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UGunComponent();
+	UItemComponent();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<UBaseGun> EquippedGunTemplate;
+		TSubclassOf<UItem> StartItem;
 
 	UPROPERTY()
-		class AAntagonist* Antagonist;
+		class UItem* EquippedItem;
 
 	UPROPERTY()
-	class UBaseGun* EquippedGun;
+		class AActor* OwningActor;
 
-	UPROPERTY()
-	class UWorld* World;
 
-	UPROPERTY()
-	float FireCounter;
 
 protected:
 	// Called when the game starts
