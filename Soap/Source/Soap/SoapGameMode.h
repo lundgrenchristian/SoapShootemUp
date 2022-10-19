@@ -34,6 +34,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AEnemy0> EnemyBP;
 
+
 	UPROPERTY()
 	FTimerHandle SpawnTimerHandle;
 

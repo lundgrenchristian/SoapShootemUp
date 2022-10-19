@@ -16,13 +16,13 @@ public:
 	// Sets default values for this actor's properties
 	AItemActor();
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TSubclassOf<UItem> Item;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USceneComponent* Root;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* DisplayMesh;
 
 protected:

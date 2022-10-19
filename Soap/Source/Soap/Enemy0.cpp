@@ -32,6 +32,17 @@ void AEnemy0::Move()
 	
 }
 
+void AEnemy0::Death()
+{
+	if (DropRatePercentage >= FMath::RandRange(0.0f, 100.0f))
+	{
+		const TSubclassOf<AItemActor> RandomItemActor = DroppableItems[FMath::RandRange(0, DroppableItems.Num() - 1)];
+		GetWorld()->SpawnActor<AItemActor>(RandomItemActor, GetActorLocation(), GetActorRotation());
+	}
+
+	Super::Death();
+}
+
 void AEnemy0::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);

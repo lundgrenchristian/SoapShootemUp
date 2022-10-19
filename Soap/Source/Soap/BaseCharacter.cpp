@@ -23,6 +23,16 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	return DamageAmount;
 }
 
+void ABaseCharacter::Death()
+{
+	Destroy();
+}
+
+void ABaseCharacter::RestoreHealth(float Amount)
+{
+	Health = FMath::Clamp(Health + Amount, 0.0f, 100.0f); 
+}
+
 
 
 // Called when the game starts or when spawned
@@ -38,7 +48,7 @@ void ABaseCharacter::Tick(float DeltaTime)
 
 	if (Health <= 0.0f)	
 	{
-		Destroy();
+		Death();
 	}
 
 }

@@ -21,10 +21,10 @@ public:
 
 
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Bullet")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bullet")
 		TSubclassOf<ABaseBullet> Bullet;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Fire Rate")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire Rate")
 		float FireRate;
 
 

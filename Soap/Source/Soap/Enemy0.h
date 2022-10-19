@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "BaseCharacter.h"
+#include "ItemActor.h"
 #include "Enemy0.generated.h"
 
 /**
@@ -23,6 +24,12 @@ public:
 
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditDefaultsOnly)
+		TArray<TSubclassOf<AItemActor>> DroppableItems;
+
+	UPROPERTY(EditDefaultsOnly)
+		float DropRatePercentage;
+
 	/*UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UItemComponent* ItemComponent;*/
 
@@ -31,4 +38,5 @@ public:
 		void Move();
 
 
+	virtual void Death() override;
 };

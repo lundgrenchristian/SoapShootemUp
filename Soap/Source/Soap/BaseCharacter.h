@@ -25,7 +25,11 @@ public:
 	UFUNCTION()
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
-	
+	UFUNCTION()
+		virtual void Death();
+
+	UFUNCTION()
+		virtual void RestoreHealth(float Amount);
 
 protected:
 	// Called when the game starts or when spawned

@@ -39,6 +39,8 @@ void ABaseBullet::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedCompone
 void ABaseBullet::BeginPlay()
 {
 	Super::BeginPlay();
+
+	SetLifeSpan(5.0f);
 	
 }
 
