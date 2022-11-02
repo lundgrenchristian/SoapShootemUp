@@ -4,6 +4,10 @@
 #include "Bullet0.h"
 #include "BaseCharacter.h"
 
+ABullet0::ABullet0(): BubbleExpandCounter(0.0f)
+{
+}
+
 void ABullet0::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if(ABaseCharacter* ActorHit = Cast<ABaseCharacter>(OtherActor))
@@ -17,3 +21,26 @@ void ABullet0::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent,
 		
 	}
 }
+
+void ABullet0::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	BubbleExpandCounter += DeltaSeconds;
+
+	if(BubbleExpandCounter <= BubbleExpandTime)
+	{
+		float const Size = BubbleBulletSize * (BubbleExpandCounter / BubbleExpandTime);
+
+		SetActorScale3D(FVector(Size));
+	}
+}
+
+void ABullet0::BeginPlay()
+{
+	Super::BeginPlay();
+
+
+}
+
+

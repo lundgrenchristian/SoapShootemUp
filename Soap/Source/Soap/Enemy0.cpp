@@ -15,6 +15,8 @@ AEnemy0::AEnemy0()
 void AEnemy0::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 }
 
 void AEnemy0::Tick(float DeltaSeconds)
