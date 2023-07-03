@@ -17,53 +17,52 @@ class SOAP_API AAntagonist : public ABaseCharacter
 public:
 	AAntagonist();
 
-	//UPROPERTY(EditAnywhere)
-	//	class USpringArmComponent* SpringArm;
-
-	UPROPERTY(EditAnywhere)
-		class UCameraComponent* Camera;
-
-
-
-	UPROPERTY(EditAnywhere)
-	class UItemComponent* ItemComponent;
-
-
-
-	//GUN
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class UStaticMeshComponent* GunMesh;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class USceneComponent* Muzzle;
-
-
-
-
-
-	
-
 protected:
 	virtual void BeginPlay() override;
-
-public:
-
 	virtual void Tick(float DeltaSeconds) override;
-
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
-
-	
-
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
-
+private:
 	UFUNCTION()
 	void MoveForward(float Value);
 
 	UFUNCTION()
 	void MoveRight(float Value);
 
-	
+	UFUNCTION()
+	void TouchPressed(ETouchIndex::Type FingerIndex, FVector Location);
+
+	UFUNCTION()
+	void TouchReleased(ETouchIndex::Type FingerIndex, FVector Location);
+
+	UFUNCTION()
+	void TouchMoved(ETouchIndex::Type FingerIndex, FVector Location);
+
+public:
+	UPROPERTY(EditDefaultsOnly)
+	class UItemComponent* ItemComponent;
+
+	UPROPERTY(EditDefaultsOnly)
+	class UStaticMeshComponent* GunMesh;
+
+	UPROPERTY(EditDefaultsOnly)
+	class USceneComponent* Muzzle;
+
+
+private:
+	UPROPERTY(EditDefaultsOnly)
+	class UCameraComponent* Camera;
+
+	bool bMoving;
+
+	FVector MoveLocation;
+
+	UPROPERTY()
+		class ASoapGameState* GameState;
+
+	UPROPERTY(EditDefaultsOnly)
+		float MovementForce;
 };
 
 

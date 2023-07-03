@@ -3,6 +3,7 @@
 
 #include "Enemy0.h"
 #include "ItemComponent.h"
+#include "SoapGameState.h"
 
 AEnemy0::AEnemy0()
 {
@@ -12,11 +13,28 @@ AEnemy0::AEnemy0()
 
 }
 
+AEnemy0::~AEnemy0()
+{
+
+	
+}
+
 void AEnemy0::BeginPlay()
 {
 	Super::BeginPlay();
 
-	
+	if (GetWorld()->GetGameState())
+	{
+		Cast<ASoapGameState>(GetWorld()->GetGameState())->EnemyArray.Add(this);
+	}
+}
+
+void AEnemy0::Destroyed()
+{
+	if (GetWorld()->GetGameState())
+	{
+		Cast<ASoapGameState>(GetWorld()->GetGameState())->EnemyArray.Remove(this);
+	}
 }
 
 void AEnemy0::Tick(float DeltaSeconds)

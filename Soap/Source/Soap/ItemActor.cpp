@@ -14,7 +14,7 @@ AItemActor::AItemActor()
 	DisplayMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Display Mesh"));
 	DisplayMesh->SetupAttachment(Root);
 
-
+	DisplayMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
 // Called when the game starts or when spawned

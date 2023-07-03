@@ -19,7 +19,13 @@ class SOAP_API AEnemy0 : public ABaseCharacter
 public:
 		AEnemy0();
 
+		~AEnemy0();
+
+		
+
 	virtual void BeginPlay() override;
+
+	virtual void Destroyed() override;
 
 	virtual void Tick(float DeltaSeconds) override;
 
