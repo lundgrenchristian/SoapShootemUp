@@ -63,6 +63,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 		float MovementForce;
+
+	UPROPERTY(EditDefaultsOnly)
+		float CameraDistance;
 };
 
 
