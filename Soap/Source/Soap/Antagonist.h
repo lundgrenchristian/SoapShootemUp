@@ -51,8 +51,7 @@ public:
 
 
 private:
-	UPROPERTY(EditDefaultsOnly)
-	class UCameraComponent* Camera;
+
 
 	bool bMoving;
 
@@ -64,8 +63,7 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 		float MovementForce;
 
-	UPROPERTY(EditDefaultsOnly)
-		float CameraDistance;
+
 };
 
 

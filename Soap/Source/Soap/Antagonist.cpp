@@ -11,7 +11,7 @@
 #include "Components/CapsuleComponent.h"
 
 
-AAntagonist::AAntagonist(): bMoving(false), MovementForce(1000.0f), CameraDistance(1000.0f)
+AAntagonist::AAntagonist(): bMoving(false), MovementForce(1000.0f)	
 {
 	/*
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
@@ -22,10 +22,7 @@ AAntagonist::AAntagonist(): bMoving(false), MovementForce(1000.0f), CameraDistan
 	SpringArm->bEnableCameraLag = true;
 	SpringArm->CameraLagSpeed = 1.0f;*/
 
-	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	//Camera->SetupAttachment(RootComponent);
-	Camera->SetWorldLocation(FVector(0.0f, 0.0f, CameraDistance));
-	Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));
+	
 
 
 	
