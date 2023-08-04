@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Enemy0.h"
+#include "Components/BoxComponent.h"
 #include "GameFramework/GameStateBase.h"
 #include "SoapGameState.generated.h"
 
@@ -16,6 +17,16 @@ struct FFormation
 		TArray<FVector> Locations;
 };
 
+
+USTRUCT()
+struct FWaterCollider
+{
+	GENERATED_BODY()
+
+
+};
+
+
 /**
  * 
  */
@@ -24,7 +35,13 @@ class SOAP_API ASoapGameState : public AGameStateBase
 {
 	GENERATED_BODY()
 
+	
+
 public:
+
+	ASoapGameState();
+
+
 		UPROPERTY(BlueprintReadOnly)
 		APlayerController* Player;
 
@@ -54,6 +71,12 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaSeconds) override;
+
+protected:
+
+	
+
+
 
 private:
 

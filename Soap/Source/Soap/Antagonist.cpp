@@ -228,7 +228,7 @@ void AAntagonist::TouchPressed(ETouchIndex::Type FingerIndex, FVector Location)
 	LookDirection.Normalize();
 	LookDirection *= MovementForce;
 
-	GetCapsuleComponent()->AddForce(LookDirection, "", true);
+	GetCapsuleComponent()->AddForce(FVector(LookDirection.X, LookDirection.Y, 0.0f), "", true);
 	
 
 }

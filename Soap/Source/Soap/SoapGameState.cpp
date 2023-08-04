@@ -5,9 +5,19 @@
 #include "Soap.h"
 
 
+
+ASoapGameState::ASoapGameState()
+{
+	
+
+}
+
 void ASoapGameState::BeginPlay()
 {
 	Super::BeginPlay();
+
+
+	
 
 	InitializeFormationArray(FormationsArray);
 	GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &ASoapGameState::SpawnGroupOfEnemies, 4.0f, true, 1.0f);
@@ -22,6 +32,7 @@ void ASoapGameState::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 }
+
 
 
 
