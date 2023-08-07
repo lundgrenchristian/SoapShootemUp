@@ -3,7 +3,7 @@
 
 #include "Enemy0.h"
 #include "ItemComponent.h"
-#include "SoapGameState.h"
+#include "../GameState/SoapGameState.h"
 
 AEnemy0::AEnemy0()
 {

@@ -6,8 +6,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "ItemComponent.h"
 
-#include "Soap.h"
-#include "SoapGameState.h"
+#include "../Soap.h"
+#include "../GameState/SoapGameState.h"
 #include "Components/CapsuleComponent.h"
 
 

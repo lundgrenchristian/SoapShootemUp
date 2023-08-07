@@ -4,7 +4,7 @@
 #include "ItemComponent.h"
 
 #include "Antagonist.h"
-#include "Soap.h"
+#include "../Soap.h"
 
 
 // Sets default values for this component's properties

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Enemy0.h"
+#include "../Old/Enemy0.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/GameStateBase.h"
 #include "SoapGameState.generated.h"

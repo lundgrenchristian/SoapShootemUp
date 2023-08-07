@@ -4,7 +4,7 @@
 #include "Gun.h"
 
 #include "Antagonist.h"
-#include "Soap.h"
+#include "../Soap.h"
 #include "Bullet0.h"
 #include "ItemComponent.h"
 

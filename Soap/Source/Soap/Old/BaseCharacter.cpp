@@ -2,7 +2,7 @@
 
 
 #include "BaseCharacter.h"
-#include "Soap.h"
+#include "../Soap.h"
 #include "Components/CapsuleComponent.h"
 
 

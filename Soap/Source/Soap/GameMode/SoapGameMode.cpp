@@ -2,9 +2,9 @@
 
 
 #include "SoapGameMode.h"
-#include "Antagonist.h"
-#include "Enemy0.h"
-#include "Soap.h"
+#include "../Old/Antagonist.h"
+#include "../Old/Enemy0.h"
+#include "../Soap.h"
 
 ASoapGameMode::ASoapGameMode()
 {
