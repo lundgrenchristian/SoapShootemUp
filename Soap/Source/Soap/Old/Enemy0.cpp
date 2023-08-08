@@ -3,7 +3,7 @@
 
 #include "Enemy0.h"
 #include "ItemComponent.h"
-#include "../GameState/SoapGameState.h"
+#include "OldGameState.h"
 
 AEnemy0::AEnemy0()
 {
@@ -25,7 +25,7 @@ void AEnemy0::BeginPlay()
 
 	if (GetWorld()->GetGameState())
 	{
-		Cast<ASoapGameState>(GetWorld()->GetGameState())->EnemyArray.Add(this);
+		Cast<AOldGameState>(GetWorld()->GetGameState())->EnemyArray.Add(this);
 	}
 }
 
@@ -33,7 +33,7 @@ void AEnemy0::Destroyed()
 {
 	if (GetWorld()->GetGameState())
 	{
-		Cast<ASoapGameState>(GetWorld()->GetGameState())->EnemyArray.Remove(this);
+		Cast<AOldGameState>(GetWorld()->GetGameState())->EnemyArray.Remove(this);
 	}
 }
 

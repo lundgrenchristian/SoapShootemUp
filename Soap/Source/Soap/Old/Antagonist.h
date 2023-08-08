@@ -58,7 +58,7 @@ private:
 	FVector MoveLocation;
 
 	UPROPERTY()
-		class ASoapGameState* GameState;
+		class AOldGameState* GameState;
 
 	UPROPERTY(EditDefaultsOnly)
 		float MovementForce;

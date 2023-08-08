@@ -7,7 +7,7 @@
 #include "ItemComponent.h"
 
 #include "../Soap.h"
-#include "../GameState/SoapGameState.h"
+#include "OldGameState.h"
 #include "Components/CapsuleComponent.h"
 
 
@@ -49,7 +49,7 @@ void AAntagonist::BeginPlay()
 	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
 	PlayerController->bShowMouseCursor = true;
 
-	GameState = Cast<ASoapGameState>(GetWorld()->GetGameState());
+	GameState = Cast<AOldGameState>(GetWorld()->GetGameState());
 }
 
 
