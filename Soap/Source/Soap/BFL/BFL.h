@@ -16,6 +16,6 @@ class SOAP_API UBFL : public UBlueprintFunctionLibrary
 
 
 	UFUNCTION(BlueprintCallable, Category = "Analytics")
-	static FVector ScreenToWorldLocation(FVector2D ScreenLocation, APlayerController* PlayerController);
+	static TArray<FVector> ScreenToWorldLocation(FVector2D ScreenLocation, APlayerController* PlayerController);
 	 
 };
